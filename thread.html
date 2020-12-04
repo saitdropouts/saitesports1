@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Forum</title>
+	<link rel="stylesheet" href="DropoutsCSS.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="content">
+		<!-- Header including links to each eSport page and related content, plus a "More" drop down menu -->
+		<header>
+			<!-- Fixed header that moves with the page -->
+			<div class ="fixed-header">
+				<div class ="logo">
+					<a href="DropoutsWebsite1.html">
+					<img border="0" alt="Sait e-Sports" src="logo.png" width="275" height="100">
+				</div>
+				<nav>
+					<a style="font-family: 'Fira Sans'" href="news.html">News</a>
+					<a style="font-family: 'Fira Sans'" href="guides.html">Guides</a>
+					<a style="font-family: 'Fira Sans'" href="streams.html">Streams</a>
+					<a style="font-family: 'Fira Sans'" href="contactUs.html">Contact Us</a>
+
+				</nav>
+			</div>
+		</header>
+	</div>
+	<!-- Logo below the header that disappears with the page -->
+	
+	<div><br></br><br></br><br></br></div>
+		<div class="top-bar">
+        <h1>Thread</h1>
+    </div>
+    <div class="main">
+        <div class="header">
+        </div>
+			<input type="text" id="forumName" placeholder="Name">
+			<textarea placeholder="Enter Text Here"></textarea>
+			<button>add comment</button>		
+        <div class="comments">
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script>
+        var id = window.location.search.slice(1);
+        var thread = threads.find(t => t.id == id);
+        var header = document.querySelector('.header');
+        var headerHtml = `
+		
+            <h4 class="title">
+                ${thread.title}
+            </h4>
+            <div class="bottom">
+                <p class="timestamp">
+                    ${new Date(thread.date).toLocaleString()}
+                </p>
+                <p class="comment-count">
+                    ${thread.comments.length} comments
+                </p>
+            </div>
+        `
+        header.insertAdjacentHTML('beforeend', headerHtml)
+       
+	   function addComment(comment) {
+            var commentHtml = `
+                <div class="comment">
+                    <div class="top-comment">
+                        <p class="user">
+                            ${comment.author}
+                        </p>
+                        <p class="comment-ts">
+                            ${new Date(comment.date).toLocaleString()}
+                        </p>
+                    </div>
+                    <div class="comment-content">
+                        ${comment.content}
+                    </div>
+                </div>
+            `
+            comments.insertAdjacentHTML('beforeend', commentHtml);
+        }
+
+        var comments = document.querySelector('.comments');
+        for (let comment of thread.comments) {
+            addComment(comment);
+        }
+
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            var txt = document.querySelector('textarea');
+            var comment = {
+                content: txt.value,
+                date: Date.now(),
+                author: document.getElementById("forumName").value
+            }
+            addComment(comment);
+            txt.value = '';
+            thread.comments.push(comment);
+            localStorage.setItem('threads', JSON.stringify(threads));
+        }
+		)
+    </script>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        h1, h4, ol {
+            margin: 10px 300px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+        button {
+            display: inline-block;
+           
+        }
+        .top-bar {
+            background-color: red;
+			padding: 30px;
+     
+        }
+        .main {
+            background-color: #F6F6EF;
+            padding: 50px 200px;
+        }
+        .comments {
+            margin: 50px 0;
+        }
+        .comment {
+            margin: 20px 0;
+        }
+        .row {
+            padding: 5px 0;
+        }
+        .bottom, .top-comment {
+            display: flex;
+            color: grey;
+            font-size: 12px;
+        }
+        .timestamp {
+            padding-right: 10px;
+        }
+        .comment-ts {
+            padding-left: 100px;
+        }
+    </style>
+
+	</div>
+		
+</body>
+
+</html>

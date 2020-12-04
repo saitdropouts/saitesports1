@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Forum</title>
+	<link rel="stylesheet" href="DropoutsCSS.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="content">
+		<!-- Header including links to each eSport page and related content, plus a "More" drop down menu -->
+		<header>
+			<!-- Fixed header that moves with the page -->
+			<div class ="fixed-header">
+				<div class ="logo">
+					<a href="DropoutsWebsite1.html">
+					<img border="0" alt="Sait e-Sports" src="logo.png" width="275" height="100">
+				</div>
+				<nav>
+					<a style="font-family: 'Fira Sans'" href="news.html">News</a>
+					<a style="font-family: 'Fira Sans'" href="guides.html">Guides</a>
+					<a style="font-family: 'Fira Sans'" href="streams.html">Streams</a>
+					<a style="font-family: 'Fira Sans'" href="contactUs.html">Contact Us</a>
+
+				</nav>
+			</div>
+		</header>
+	</div>
+	<div><br></br><br></br><br></br>
+	</div>
+	<div class = "top-bar">
+		<h1>SAIT E-Sports Forum</h1>
+	</div>
+	
+	<div class="top-bar">
+        <h2>Discussions</h2>
+    </div>
+    <div class="main">
+        <ol>
+        </ol>
+    </div>
+    <script src="data.js"></script>
+    <script>
+        console.log(threads);
+        var container = document.querySelector('ol');
+        for (let thread of threads) {
+            var html = `
+            <li class="row">
+                <a href="thread.html?${thread.id}">
+                    <h4 class="title">
+                        ${thread.title}
+                    </h4>
+                    <div class="bottom">
+                        <p class="timestamp">
+                            ${new Date(thread.date).toLocaleString()}
+                        </p>
+                        <p class="comment-count">
+                            ${thread.comments.length} comments
+                        </p>
+                    </div>
+                </a>
+            </li>
+            `
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    </script>
+    <style>
+        body {
+        }
+        a {
+            text-decoration: none;
+            color: black;
+	
+        }
+        h1, h4, ol {
+            margin: 0;
+        }
+        p {
+            margin: 15px ;
+        }
+        .top-bar {
+            background-color: red;
+            padding: 5px;
+        }
+        .main {
+            background-color: #F6F6EF;
+            padding: 50px 500px;
+        }
+        .row {
+            padding: 15px 0;
+        }
+        .bottom {
+            display: flex;
+            color: grey;
+            font-size: 16px;
+        }
+        .timestamp {
+            padding-right: 300px;
+        }
+    </style>
+	
+</body>
+</html>
