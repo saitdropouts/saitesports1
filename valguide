@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Guides</title>
+	<link rel="stylesheet" href="DropoutsCSS.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="content">
+		<!-- Header including links to each eSport page and related content, plus a "More" drop down menu -->
+		<header>
+			<!-- Fixed header that moves with the page -->
+			<div class ="fixed-header">
+				<div class ="logo">
+					<a href="index">
+					<img border="0" alt="Sait e-Sports" src="logo.png" width="275" height="100">
+				</div>
+				<nav>
+					<a style="font-family: 'Fira Sans'" href="News.html">News</a>
+					<a style="font-family: 'Fira Sans'" href="Guides.html">Guides</a>
+					<a style="font-family: 'Fira Sans'" href="Streams.html">Streams</a>
+					<a style="font-family: 'Fira Sans'" href="ContactUs.html">Contact Us</a>
+
+				</nav>
+			</div>
+		</header>
+	</div>
+	<!-- Logo below the header that disappears with the page -->
+	<div class="welcome-logo">
+		<h2 style="font-family: 'Fira Sans'" >Guides</h2>
+	</div>
+	<!-- All content regarding general news, biggest stories -->
+	<div class="content-area">
+		<div class="articles">
+			<div class="article-img">
+				<img src="valorant.jpg" alt="">
+			</div>
+				<div class="article-info">
+					<div class="article-date">
+						<span>Thursday</span>
+						<span>November 11 2020</span>
+					</div>
+					<h1 class="article-title">Valorant Beginners Guide</h1>
+						<p class="article-text">
+TIP #1: BEFORE YOU PLAY, CONFIGURE SETTINGS TO OPTIMIZE GAMING EXPERIENCE 
+	before playing any video game, you should always view all the settings to suit YOU before playing.
+	you can also always start up the tutorial mode and configure settings there so things like your 
+	sensitivity, sounds, and visual aspects are all comfortable to you.
+	
+TIP #2: READ ALL THE AGENTS ABILITIES TO FIND OUT WHO SUITS YOU THE MOST
+	in valorant there are many different type of agents that specialize in different things.
+	before playing a game it's a good idea to find out the differences between all of them
+	and to choose one that suits your gamestyle. for ex you may want to choose an agent such 
+	as Jett if you like to play aggressively
+	
+TIP #3: LEARN HOW THE CREDIT SYSTEM WORKS
+	the credit system in valorant is a very important aspect to the game, without knowing how 
+	it works you won't have money to buy weapons in game! having knowledge on the credit system will
+	give you an edge on your opponents, allowing you to have better guns when they don't.
+		know the difference between save rounds, full buy rounds, force buy rounds, and half buy rounds.
+	
+TIP #4:	DON'T RUN AND SHOOT	
+	valorant is a tactical shooter so shooting while running decreases your accuracy immensely. if you stand 
+	still while shooting you'll have nearly 100% accuracy (not accounting for recoil), this will make it 
+	easier for you to get kills
+	
+TIP #5: WALK!!!!
+	everytime you run in valorant you make a lot of noise which reveals your location, depending on your
+	keybinds, holding the walk button will keep your location concealed which makes it easier to sneak up on 
+	opponents. mastering the timing of sprinting and walking will improve your gameplay immensely 
+						</p>
+				</div>
+		</div>
+
+	</div>
+</body>
+</html>
