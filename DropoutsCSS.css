@@ -147,7 +147,19 @@ nav a{
 	position:absolute;
 	top:1150px;
 }
-
+.articles6{
+	width: 100%;
+	max-width: 75rem;
+	height: 15rem;
+	padding: 5rem;
+	background-color: #fff;
+	box-shadow: 0 1.4rem 8rem rgba(0,0,0,.2);
+	display: flex;
+	align-items: center;
+	border-radius: .8rem;
+	position:relative;
+	top:325px;
+}
 .article-img{
 	min-width: 11rem;
 	max-width: 11rem;
